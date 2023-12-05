@@ -51,7 +51,7 @@ function App() {
 
 const Container = styled.div`
   width: 100%;
-  height: 500px;
+  background-color: #cccccc;
   position: relative;
 `
 
@@ -67,12 +67,28 @@ const Circle = styled.div`
   border-radius: 10px;
   left: ${props => (props.left - 18) + 'px'};
   top: ${props => (props.top - 17) + 'px'};
-  background-color: red;
+  background-color: #2c8544;
 `
 
 const Buttons = styled.div`
   position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
   z-index: 3;
+  button {
+    width: 49%;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    background-color: #18c948;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+  }
 `
 
 export default App;
