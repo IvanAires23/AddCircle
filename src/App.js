@@ -12,17 +12,29 @@ function App() {
     setRedoCircles([]);
   };
 
-  function handleUndo() {
+  function handleUndoCircle() {
     const lastCircle = circles[circles.length - 1]
     const updateCircles = circles.slice(0, circles.length - 1)
-    setCircles(updateCircles)
-    setRedoCircles([...redoCircles, lastCircle])
+    if (lastCircle) {
+      setCircles(updateCircles)
+      setRedoCircles([...redoCircles, lastCircle])
+    }
+  }
+
+  function handleRedoCircle() {
+    const lastCircle = redoCircles[redoCircles.length - 1]
+    const updateCircles = redoCircles.slice(0, redoCircles.length - 1)
+    if (lastCircle) {
+      setCircles([...circles, lastCircle])
+      setRedoCircles(updateCircles)
+    }
   }
 
   return (
     <Container>
       <Buttons>
-        <button onClick={handleUndo}>Desfazer</button>
+        <button onClick={handleUndoCircle}>Desfazer</button>
+        <button onClick={handleRedoCircle}>Resfazer</button>
       </Buttons>
       <Circles onClick={handleAddCircle}>
         {circles.map((circle, index) => (
@@ -46,7 +58,6 @@ const Container = styled.div`
 const Circles = styled.div`
   width: 100%;
   height: 100vh;
-  background-color: beige;
 `
 
 const Circle = styled.div`
