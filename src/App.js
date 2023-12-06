@@ -51,7 +51,7 @@ function App() {
 
 const Container = styled.div`
   width: 100%;
-  background-color: #cccccc;
+  background-color: #dbdbdb;
   position: relative;
 `
 
