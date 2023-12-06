@@ -13,7 +13,7 @@ export const BoxButtons = styled.div`
     width: 49%;
     height: 50px;
     border-radius: 10px;
-    border: 1px solid #000000;
+    border: 0;
     background-color: #18c948;
     color: #ffffff;
     font-weight: 700;
